@@ -1,5 +1,9 @@
+/* src/App.css */
+
+/* General Styles */
 .App {
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 .App-logo {
@@ -13,26 +17,146 @@
   }
 }
 
+/* Header Styles */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it's above other content */
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #000; /* Update color for better contrast */
+}
+
+.App-header-title {
+  margin: 0;
+  font-size: 2px;
+}
+
+.App-header-nav .nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+}
+
+.App-header-nav .nav-item {
+  margin: 0 10px;
+}
+
+.App-header-nav .nav-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.App-header-nav .nav-link:hover {
+  text-decoration: underline;
+}
+
+/* About Section Styles */
+.about-section {
+  padding: 40px;
+  margin-top: 80px; /* Adjust based on the height of your header */
+  background-color: #ffffff;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.about-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.about-content {
+  flex: 1;
+  text-align: left; /* Align text to the left */
+  display: flex;
+  flex-direction: column; /* Ensure text and button stack vertically */
+  justify-content: center; /* Center content vertically */
+}
+
+.about-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.about-sub-sec {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.about-profile {
+  flex: 0 0 300px; /* Adjust size as needed */
+  height: 300px;
+  width: 300px;
+  margin-bottom: 20px; /* Space between profile image and text */
+}
+
+.profile-pic {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* Makes the profile picture a circle */
+  border: 3px solid #ffffff; /* Optional: border color for the profile picture */
+  margin-left: -60px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center align text */
   }
-  to {
-    transform: rotate(360deg);
+
+  .about-content {
+    margin-right: 0;
+    margin-bottom: 20px; /* Add space between text and image */
+  }
+
+  .about-profile {
+    order: -1; /* Move profile image to the top */
+    margin-bottom: 20px; /* Add space between image and text */
+  }
+
+  .btn-primary {
+    display: inline-block;
+    margin-top: 20px; /* Ensure space between text and button */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text {
+    font-size: 16px; /* Smaller font size for smaller screens */
+  }
+
+  .btn-primary {
+    padding: 8px 16px; /* Smaller button padding */
+  }
+
+  .about-profile {
+    flex: 0 0 150px; /* Smaller profile image */
+    height: 150px;
+    width: 150px;
   }
 }
